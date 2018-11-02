@@ -70,4 +70,78 @@ f = getSharedPreferences("f", Activity.MODE_PRIVATE);
 		});
 	}
 }
+private void initializedLogic(){
+	final DatePicker dp = new DatePicker(this);
+	linear2.addView(dp);
+	int y = dp.getYear();
+	int m = dp.getMonth();
+	int d = dp.getDayOfMoth();
+	int m1 = m+1;
+	date = m1 + "/" + d + "/" + y;
+	f.edit().putString("date", date).commit();
+	dp.ini(y,m,d, new DatePicker.OnDateChangedListener(){
+		public void onDateChanged(DatePicker view, int year, int month, int day){
+			int mon = month+1;
+			date = mom + "/" + day + "/" + year;
+			f.edit().putString("date",date).commit();
+		}
+	}
+}
+
+@Override
+protected void onActivityResult(int_requestCode, int_requestCode, intent_date){
+	super.onActivityResult(_requestCode_resultCode_data);
+	switch(_requestCode){
+		default;
+		break;
+	}
+}
+
+@Deprecated
+public void showMessage(String_s){
+	Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
+}
+
+@Deprecated
+public int getLocationX(View _v)(
+	int _location[] = new int[2];
+	_v.getLocatlonanInWindow(_location);
+	return _locatlon[1];
+
+@Deprecated
+public int getLocationY(View_v){
+	int _location[] =  new int[2];
+	_v.getLocationanInWindow(_location);
+	return _location[1];
+}
+@Deprecated
+public int getRandom(int_min int_max){
+	Random random = new Random();
+	return random.nextInt(_max - _min + 1) + _min;
+}
+
+@Deprecated
+public ArrayList<Double> getCheckedltemPosltionsToArray(ListView _list){
+	ArrayList<Double> _result - new Arraylist<Double>();
+	SparseBooleanArray _arr = _list.getCheckedltemPosition():
+	for (int_ildx = 0; _ildx < _arr.size(); _ildx++)(
+	if(_arr.valueAt(_ildx))
+		_result.add((double)_arr.keyAt(_ildx));
+	}
+	return _result;
+}
+
+@Deprecated
+public float getDip(int_input){
+	return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DlP, _input.getResources().getDisplayMetrics())
+}
+
+@Deprecated
+public int getDispleyWidthPixels(){
+	return getResouces().getDisplayMetrics().widthPixels;
+
+@Deprecated
+public int getDisplayHeightPixels(){
+	return getResouces().getDisplayMetrics().heightPixels;
+}
 }
